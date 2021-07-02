@@ -16,7 +16,7 @@ public class Morse {
 
     private String message;
 
-    public static Hashtable<String, String> obtenerEquivalencias() {
+    private Hashtable<String, String> obtenerEquivalencias() {
         Hashtable<String, String> equivalencias = new Hashtable<>();
         equivalencias.put("A", ".-");
         equivalencias.put("B", "-...");
@@ -71,7 +71,7 @@ public class Morse {
     }
 
     private String asciiAMorse(String ascii) {
-        Hashtable<String, String> equivalencias = obtenerEquivalencias();
+        Hashtable<String, String> equivalencias = this.obtenerEquivalencias();
         return equivalencias.getOrDefault(ascii, "");
     }
 
